@@ -1,3 +1,5 @@
+const ColorBlock = "#0b5394";
+
 Blockly.Blocks['uart_init'] = {
   init: function() {
     this.jsonInit(
@@ -161,7 +163,7 @@ Blockly.Blocks['uart_init'] = {
             "value": 115200
           }
         ],
-        colour: "#0b5394",
+        colour: ColorBlock,
         tooltip: "khởi tạo kết nối UART",
         helpUrl: ""
       }
@@ -265,7 +267,7 @@ Blockly.Python['uart_write_string'] = function(block) {
 Blockly.Blocks["uart_read_bytes"] = {
   init: function () {
     this.jsonInit({
-      colour: "#0b5394",
+      colour: ColorBlock,
       tooltip: "đọc n bytes từ UART",
       message0: "đọc UART %1 %2 bytes ",
       output: null,
@@ -293,7 +295,7 @@ Blockly.Python['uart_read_bytes'] = function(block) {
 Blockly.Blocks["uart_write_bytes"] = {
   init: function () {
     this.jsonInit({
-      colour: "#0b5394",
+      colour: ColorBlock,
       nextStatement: null,
       tooltip: "gửi dữ liệu dạng byte vào UART",
       message0: "gửi bytes %1 %2 qua UART",
@@ -316,15 +318,18 @@ Blockly.Python['uart_write_bytes'] = function(block) {
   // TODO: Assemble Python into code variable.
   Blockly.Python.definitions_['import_ubinascii'] = 'import ubinascii';
   var bytes = Blockly.Python.valueToCode(block, 'BYTES', Blockly.Python.ORDER_ATOMIC);
-  console.log(bytes.split(","));
-  var code = 'uart.write(ubinascii.hexlify(bytes([' + bytes.split(",") + '])))\n';
+  var bytes_after = bytes.split(",");
+  bytes_after =  bytes.split(" ");
+  console.log(bytes_after);
+  //var code = 'uart.write(bytearray([' + bytes.split(",") + ']))\n';
+  var code = 'uart.write(bytearray([' + bytes_after + ']))\n';
   return code;
 };
 
 Blockly.Blocks["uart_check_data"] = {
   init: function () {
     this.jsonInit({
-      colour: "#0b5394",
+      colour: ColorBlock,
       tooltip: "kiểm tra xem có dữ liệu gửi đến UART hay không",
       message0: "có dữ liệu gửi đến UART?",
       output: null,
@@ -346,7 +351,7 @@ Blockly.Python['uart_check_data'] = function(block) {
 Blockly.Blocks["uart_deinit"] = {
   init: function () {
     this.jsonInit({
-      colour: "#0b5394",
+      colour: ColorBlock,
       nextStatement: null,
       tooltip: "tắt và hủy kết nối UART",
       message0: "tắt kết nối UART",

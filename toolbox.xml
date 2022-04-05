@@ -31,11 +31,11 @@
     <block type="uart_write_bytes">
       <value name="BYTES">
         <shadow type="text">
-          <field name="TEXT">0x7e, 0x03, 0x11</field>
+          <field name="TEXT">0xAA,0x00,0x00,0x00</field>
         </shadow>
       </value>
     </block>
     <block type="uart_check_data" />
-    <block type="uart_deinit" />
+    <!-- <block type="uart_deinit" /> -->
   </category>
 </xml>
