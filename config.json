@@ -1,0 +1,15 @@
+{
+    "name": "MQTT",
+    "description": "Mục mở rộng hỗ trợ giao tiếp MQTT cho ứng dụng IoT",
+    "libs": [
+    ],
+    "blocks": [
+        "definition.js"
+    ],
+    "toolbox": "toolbox.xml",
+    "languages": {
+        "en": "languages/en.js",
+        "vi": "languages/vi.js"
+    },
+    "poster": "poster.jpg"
+}
