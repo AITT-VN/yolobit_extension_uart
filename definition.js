@@ -185,7 +185,7 @@ Blockly.Python['uart_init'] = function(block) {
 Blockly.Blocks["uart_read_until"] = {
   init: function () {
     this.jsonInit({
-      colour: "#0b5394",
+      colour: ColorBlock,
       tooltip: "đọc dữ liệu từ UART",
       message0: "đọc UART cho đến ký tự %1",
       output: null,
@@ -238,7 +238,7 @@ Blockly.Python['uart_read_until'] = function(block) {
 Blockly.Blocks["uart_write_string"] = {
   init: function () {
     this.jsonInit({
-      colour: "#0b5394",
+      colour: ColorBlock,
       nextStatement: null,
       tooltip: "gửi dữ liệu qua UART",
       message0: "gửi chuỗi %1 %2 qua UART",
